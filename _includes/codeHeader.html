@@ -1,0 +1,20 @@
+<div class="code-header">
+    <div class="code-header-title"> {{include.title}} </div>
+    <button class="copy-code-button" aria-label="Copy code to clipboard"></button>
+</div>
+
+
+{% comment %}
+{% raw %}
+
+<!-- Así se usa: -->
+{% include codeHeader.html title=""%}
+```someLanguage
+code goes in here!
+```
+
+<!-- Y esto al final -->
+<script src="/assets/scripts/copyCode.js"></script>
+
+{% endraw %}
+{% endcomment %}

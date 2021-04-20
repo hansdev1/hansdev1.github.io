@@ -1,0 +1,165 @@
+#toc {
+  a {
+    &:hover,
+    &:focus {
+      border-left: 1px solid var(--link-on-custom) !important;
+      color: var(--link-on-custom) !important;
+    }
+    &.nav-link.active {
+      color: var(--link-on-custom) !important;
+      border-left: 2px solid var(--link-on-custom) !important;
+    }
+  }
+}
+
+.not-border-bottom {
+  border-bottom: none !important;
+}
+
+#post-wrapper .post-content,
+#topbar #breadcrumb,
+#post-list .post-preview,
+#page,
+#search-results {
+  a:not(.page-link) {
+    color: var(--link-custom) !important;
+  }
+  a:hover:not(#acces-tag):not(.page-link) {
+    color: var(--link-on-custom) !important;
+    &:not(.tag) {
+      border-bottom: 1px solid var(--link-on-custom) !important;
+    }
+    &.category-trigger {
+      border-bottom: none !important;
+    }
+  }
+}
+.post-content p a {
+  border-bottom: 1px solid var(--link-custom) !important;
+}
+
+#access-tags a.post-tag {
+  &:hover {
+    background-color: var(--red-intense) !important;
+    border-color: var(--red-intense) !important;
+  }
+}
+a.btn:not(#back-to-top) {
+  color: var(--link-on-custom) !important;
+  &:hover {
+    background-color: var(--red-intense) !important;
+    border-color: var(--red-intense) !important;
+    color: white !important;
+    @extend .not-border-bottom;
+  }
+}
+
+// CATEGORÍAS DEBAJO DEL POST
+.post-meta a {
+  color: var(--link-custom) !important;
+  border-bottom: 1px solid var(--link-custom) !important;
+  &:hover {
+    color: var(--link-on-custom) !important;
+    border-bottom: 1px solid var(--link-on-custom) !important;
+  }
+}
+
+// ETIQUETAS DEBAJO DEL POST
+.post-tags .post-tag {
+  &:hover {
+    color: var(--link-on-custom);
+  }
+}
+
+// ETIQUETAS BÚSQUEDA MOBILE
+#search-hints .post-tag {
+  color: var(--link-custom) !important;
+  &:hover {
+    color: var(--link-on-custom) !important;
+  }
+}
+#search-cancel {
+  color: var(--link-custom) !important;
+}
+
+// PÁGINA ETIQUETAS
+#page #tags .tag {
+  &:hover {
+    border-bottom: none !important;
+  }
+}
+
+// INICIO (Home) -> Números de página
+.active .page-link {
+  background-color: var(--red-intense) !important;
+}
+
+// BOTÓN NÚMERO PÁGINA BLOGS
+li.active .page-link {
+  background-color: var(--number-boton-bgcolor) !important;
+  border-color: var(--number-boton-border-color) !important;
+}
+
+// FOOTER DE LA PÁGINA
+#footer a {
+  color: var(--link-custom) !important;
+  &:hover {
+    color: var(--link-on-custom) !important;
+    border-bottom: 1px solid var(--link-on-custom) !important;
+  }
+}
+
+#recent-posts {
+  @extend #related-posts;
+}
+
+.post-navigation {
+  padding-bottom: 3rem !important;
+}
+
+#related-posts,
+#recent-posts {
+  margin-top: 0 !important;
+  margin-bottom: 3rem !important;
+}
+
+@media all and (max-width: 1199px) {
+  .access {
+    margin-top: 0 !important;
+    margin-bottom: 3rem !important;
+  }
+  #access-tags {
+    //padding-left: calc(15px + 1.5rem) !important;
+    //margin-left: -.5rem !important;
+    border-left: none !important;
+  }
+}
+@media all and (max-width: 1200px) {
+  .access > div {
+    border-left: none !important;
+  }
+}
+
+// BOTONES COMPARTIR
+.share-wrapper .share-icons .fab.fa-whatsapp {
+  color: var(--btn-share-color, #00bb2d);
+}
+
+i.fa-link {
+  transition: color 0.35s ease-in-out;
+}
+i.fa-link.clicked,
+i.fa-link.clicked:hover,
+i.fa-link.clicked:focus {
+  transition: color 0s;
+  color: var(--link-on-custom) !important;
+}
+
+#breadcrumb span,
+blockquote {
+  color: var(--soft-text) !important;
+}
+
+.mode-toogle{
+  
+}

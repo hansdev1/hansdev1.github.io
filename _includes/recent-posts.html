@@ -1,0 +1,27 @@
+<!-- POSTS RECIENTES DEBAJO DEL ARTÍCULO -->
+
+<div id="recent-posts" class="mt-5 mb-2 mb-sm-4">
+  <h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>{{ site.data.label.panel.lastmod | default: 'Más reciente' }}</h3>
+  <div class="card-deck mb-4">
+    {% for post in site.posts | limit: 3 %}
+    {% assign url = post.url | relative_url %}
+    {% assign index = entry | plus: 0 %}
+    {% assign post = site.posts[index] %}
+    <div class="card">
+      <a href="{{ post.url | relative_url }}">
+        <img class="card-img-top" src="{{ post.image.src }}" alt="Card image cap">
+        <div class="card-body">
+          {% include timeago.html date=post.date class="small" %}
+          <h3 class="pt-0 mt-1 mb-3" data-toc-skip>{{ post.title }}</h3>
+          <div class="text-muted small">
+            <p>
+              {% include no-linenos.html content=post.content %}
+              {{ content | markdownify | strip_html | truncate: 200 }}
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div> <!-- .card-deck -->
+</div> <!-- #related-posts -->

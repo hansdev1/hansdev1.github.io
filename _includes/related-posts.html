@@ -88,6 +88,7 @@
       {% assign post = site.posts[index] %}
       <div class="card">
         <a href="{{ post.url | relative_url }}">
+          <img class="card-img-top" src="{{ post.image.src }}" alt="Card image cap">
           <div class="card-body">
             {% include timeago.html date=post.date class="small" %}
             <h3 class="pt-0 mt-1 mb-3" data-toc-skip>{{ post.title }}</h3>

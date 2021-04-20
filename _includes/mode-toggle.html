@@ -2,7 +2,7 @@
   Switch the mode between dark and light.
 -->
 
-<i class="mode-toggle fas fa-adjust"></i>
+<i class="mode-toggle "></i>
 
 <script type="text/javascript">
 
@@ -27,7 +27,7 @@
       var self = this;
 
       /* always follow the system prefers */
-      this.sysDarkPrefers.addListener(function() {
+      this.sysDarkPrefers.addListener(function () {
         if (self.hasMode) {
           if (self.isDarkMode) {
             if (!self.isSysDarkPrefer) {
@@ -79,7 +79,7 @@
     /* get the current mode on screen */
     get modeStatus() {
       if (this.isDarkMode
-        || (!this.hasMode && this.isSysDarkPrefer) ) {
+        || (!this.hasMode && this.isSysDarkPrefer)) {
         return ModeToggle.DARK_MODE;
       } else {
         return ModeToggle.LIGHT_MODE;
@@ -88,11 +88,11 @@
 
     updateMermaid() {
       if (typeof mermaid !== "undefined") {
-        let expectedTheme = (this.modeStatus === ModeToggle.DARK_MODE? "dark" : "default");
+        let expectedTheme = (this.modeStatus === ModeToggle.DARK_MODE ? "dark" : "default");
         let config = { theme: expectedTheme };
 
         /* re-render the SVG › <https://github.com/mermaid-js/mermaid/issues/311#issuecomment-332557344> */
-        $(".mermaid").each(function() {
+        $(".mermaid").each(function () {
           let svgCode = $(this).prev().children().html();
           $(this).removeAttr("data-processed");
           $(this).html(svgCode);
@@ -134,12 +134,29 @@
 
   } /* ModeToggle */
 
+  function updateToggleClass(element) {
+    if (toggle.modeStatus == ModeToggle.DARK_MODE) {
+      element.classList.remove('fas');
+      element.classList.add('far');
+    } else if (toggle.modeStatus == ModeToggle.LIGHT_MODE) {
+      element.classList.remove('far');
+      element.classList.add('fas');
+    } else {
+      console.log(toggle.modeStatus);
+    }
+  }
+
   let toggle = new ModeToggle();
 
-  $(".mode-toggle").click(function() {
+  const element = document.getElementsByClassName('mode-toggle')[0];
+  element.classList.add('fa-lightbulb');
+  updateToggleClass(element);
+
+  $(".mode-toggle").click(function () {
 
     toggle.flipMode();
-
-  });
+    updateToggleClass(this);
+  }
+  );
 
 </script>

@@ -1,0 +1,137 @@
+:root {
+  // Post Navigation y Panel Tag (TEMA OSCURO Y CLARO)
+  --red-intense: rgb(142, 42, 42);
+
+  //--link-dark: rgb(182, 70, 70);
+  --link-dark: rgb(232, 161, 161);
+  //--link-light: rgb(189,1,1);
+  --link-light: rgb(174, 29, 29);
+
+  --link-on-dark: rgb(255, 127, 127);
+  //--link-on-light: rgb(248, 138, 138);
+  //--link-on-light: rgb(233, 0, 0);  // rojo anterior
+  --link-on-light: rgb(224, 0, 14); // rojo biobio
+
+  // var(--link-custom);
+  // var(--link-on-custom);
+
+  // Color botón número pábina blogs
+  --number-boton-bgcolor-light: rgb(142, 42, 42);
+  --number-boton-bgcolor-dark: rgb(94, 28, 28);
+  --number-boton-border-color-light: rgb(255, 0, 0);
+  --number-boton-border-color-dark: rgb(138, 66, 66);
+
+  // BOTONES COMPARTIR
+  --btn-share-hover-color-dark: #bfc1ca;
+  --btn-share-hover-color-light: var(--red-intense);
+
+  --soft-text-light:rgb(89, 89, 89);
+  --soft-text-dark: rgb(179, 179, 179);
+
+  // -------o--------
+
+  --code-header-bg-white: #ddd;
+  --code-header-bg-black: #222;
+
+  --code-button-bg-white: #fff;
+  --code-button-bg-black: #444;
+
+  --code-button-color-white: #444;
+  --code-button-color-black: #bbb;
+
+  --code-button-bg-hov-white: #888;
+  --code-button-bg-hov-black: #bbb;
+
+  --code-button-color-hov-white: #fff;
+  --code-button-color-hov-black: #111;
+}
+
+// Color sidebar
+html[mode="light"] {
+  --heading-color: #333333;
+  //--sidebar-bg: rgb(39, 40, 43);
+  --sidebar-bg: radial-gradient(circle, #242424 1%, #1d1f27 99%);
+  --code-header-bg: var(--code-header-bg-white);
+  --code-button-bg: var(--code-button-bg-white);
+  --code-button-color: var(--code-button-color-white);
+
+  --code-button-bg-hov: var(--code-button-bg-hov-white);
+  --code-button-color-hov: var(--code-button-color-hov-white);
+
+  --link-custom: var(--link-light);
+  --link-on-custom: var(--link-on-light);
+
+  --number-boton-bgcolor: var(--number-boton-bgcolor-light);
+  --number-boton-border-color: var(--number-boton-border-color-light);
+
+  --btn-share-hover-color: var(--btn-share-hover-color-light);
+
+  --soft-text: var(--soft-text-light);
+}
+html[mode="dark"] {
+  --heading-color: #afb0b1;
+  --sidebar-bg: radial-gradient(circle, #242424 1%, #1d1f27 99%);
+  --code-header-bg: var(--code-header-bg-black);
+  --code-button-bg: var(--code-button-bg-black);
+  --code-button-color: var(--code-button-color-black);
+
+  --code-button-bg-hov: var(--code-button-bg-hov-black);
+  --code-button-color-hov: var(--code-button-color-hov-black);
+
+  --link-custom: var(--link-dark);
+  --link-on-custom: var(--link-on-dark);
+
+  --number-boton-bgcolor: var(--number-boton-bgcolor-dark);
+  --number-boton-border-color: var(--number-boton-border-color-dark);
+  
+  --btn-share-hover-color: var(--btn-share-hover-color-dark);
+
+  --soft-text: var(--soft-text-dark);
+}
+@media (prefers-color-scheme: dark) {
+  html:not([mode]),
+  html[mode="dark"] {
+    --heading-color: #afb0b1;
+    --sidebar-bg: radial-gradient(circle, #242424 1%, #1d1f27 99%);
+    --code-header-bg: var(--code-header-bg-black);
+    --code-button-bg: var(--code-button-bg-black);
+    --code-button-color: var(--code-button-color-black);
+
+    --code-button-bg-hov: var(--code-button-bg-hov-black);
+    --code-button-color-hov: var(--code-button-color-hov-black);
+
+    --link-custom: var(--link-dark);
+    --link-on-custom: var(--link-on-dark);
+
+    --number-boton-bgcolor: var(--number-boton-bgcolor-dark);
+    --number-boton-border-color: var(--number-boton-border-color-dark);
+
+    --btn-share-hover-color: var(--btn-share-hover-color-dark);
+
+    --soft-text: var(--soft-text-dark);
+
+    .mode-toggle {
+      transform: none;
+    }
+  }
+  html[mode="light"] {
+    --heading-color: #333333;
+    --sidebar-bg: radial-gradient(circle, #242424 1%, #1d1f27 99%);
+    --code-header-bg: var(--code-header-bg-white);
+    --code-button-bg: var(--code-button-bg-white);
+    --code-button-color: var(--code-button-color-white);
+
+    --code-button-bg-hov: var(--code-button-bg-hov-white);
+    --code-button-color-hov: var(--code-button-color-hov-white);
+
+    --link-custom: var(--link-light);
+    --link-on-custom: var(--link-on-light);
+
+    --number-boton-bgcolor: var(--number-boton-bgcolor-light);
+    --number-boton-border-color: var(--number-boton-border-color-light);
+
+    --btn-share-hover-color: var(--btn-share-hover-color-light);
+
+    --soft-text: var(--soft-text-light);
+  }
+}

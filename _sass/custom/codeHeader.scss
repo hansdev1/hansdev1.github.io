@@ -1,0 +1,79 @@
+.code-header {
+  display: flex;
+  //justify-content: flex-end;
+  justify-content: space-between;
+  margin-bottom: -0.5em;
+  //background-color: var(--inline-code-bg);
+  background-color: var(--code-header-bg);
+  padding: 0.5em;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+
+  @media all and (max-width: 576px) {
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+  }
+}
+
+.code-header-title {
+  //padding-left: 1.5rem;
+  padding-left: calc(15px + .25rem);
+  //font-size: 0.7rem;
+  font-size: 0.8em;
+  //font-weight: 600;
+  letter-spacing: 0.1em;
+  align-self: center;
+}
+
+.copy-code-button {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  grid-column-gap: 4px;
+  border: none;
+  cursor: pointer;
+  // font-size: 1rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+
+  font-size: 0.7rem;
+  font-weight: 600;
+  //background-color: var(--mask-bg);
+  background-color: var(--code-button-bg);
+  outline: none !important;
+  color: var(--code-button-color);
+  //letter-spacing: 0.1em;
+  transition: background-color 0.35s ease-in-out;
+  user-select: none;
+
+  &:hover{
+    background-color: var(--code-button-bg-hov);
+    color: var(--code-button-color-hov);
+  }
+  
+  &::before {
+    content: "COPIAR";
+  }
+
+  &::after {
+    // content: "📋";
+    display: block;
+  }
+
+  // This class will be toggled via JavaScript
+  &.copied {
+    &::before {
+      content: "COPIADO!";
+    }
+
+    &::after {
+      // content: "✔️";
+    }
+  }
+}
+
+//Quitando border redondos a la parte de arriba para que encaje el header con el botón Copiar
+.highlighter-rouge {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

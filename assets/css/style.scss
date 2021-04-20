@@ -5,3 +5,34 @@
 $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
 
 @import "jekyll-theme-chirpy";
+@import 'custom/variables';
+@import 'custom/codeHeader';
+//@import 'custom/toc';
+
+// Imágen más grande que artículo
+.preview-img{
+    
+    margin-left: -25px;
+    margin-right: -25px;
+    max-width: calc(100% + 50px);
+    //width: 100%;
+    @media all and (min-width: 768px){
+        margin-top: 15px;
+    }
+    @media all and (min-width: 992px){
+        margin-top: 3em;
+    }
+}
+
+// Título dentro de la imágen
+.post-title{
+    margin-top: -1em !important;
+    background-color: var(--main-wrapper-bg);
+    position: relative;
+    margin-left: -.5em;
+    margin-right: -.5em;
+    padding: .5em;
+    padding-bottom: 0;
+}
+
+@import 'custom/style2';
